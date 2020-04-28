@@ -14,7 +14,7 @@ body{
 .addItem{
     /* margin-top: 30px; */
     max-width: 500px;
-    margin: 30px auto;
+    margin: 15px auto;
 }
 
 #add{
@@ -28,11 +28,11 @@ body{
 }
 
 #listItem{
-    background-color: #f5eef7;
+    background-color: rgba(255, 255, 255, 0.897);
 }
 
 .input-group-text{
-    background-color: #d3c4d6;
+    background-color: hsl(300, 100%, 33%);
 }
 
 
