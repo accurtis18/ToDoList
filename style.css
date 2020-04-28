@@ -33,6 +33,7 @@ body{
 
 .input-group-text{
     background-color: hsl(300, 100%, 33%);
+    border: none;
 }
 
 
