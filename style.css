@@ -6,6 +6,11 @@ body{
     padding-bottom: 60px;
 }
 
+.title{
+    text-align: center;
+    margin-top: 15px;
+}
+
 .addItem{
     /* margin-top: 30px; */
     max-width: 500px;
