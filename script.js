@@ -10,7 +10,7 @@ function writeItems(listItem){
     $('#toDoList').append(`<div class="input-group mb-3 fullItem">
     <div class="input-group-prepend">
     <div class="input-group-text">
-      <input type="checkbox" aria-label="Checkbox for following text input">
+      <input type="checkbox" aria-label="Checkbox for following text input" id="check">
     </div>
   </div>
     <input type="text" class="form-control" id="listItem" value="${listItem}" readonly>
@@ -43,6 +43,13 @@ $('#addedItem').keypress(function (e) {
 
 $('#add').on("click",function(){
     runAddItems();
+});
+
+$('#toDoList').on("click", '#check', function(){
+    $(this).closest(".fullItem").remove();
+    var item = $(this).closest(".fullItem").find("input[id='listItem'").val();
+    console.log(item);
+    removeFromArray(item);
 });
 
 $('#toDoList').on("click", '#delete', function(){
