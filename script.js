@@ -4,7 +4,7 @@ $(document).ready(function(){
     if(localToDo !== null && localToDo !== ""){
         toDo = localToDo.split(',');
         grabItems();
-    } 
+    }
 
 function writeItems(listItem){
     $('#toDoList').append(`<div class="input-group mb-3 fullItem">
@@ -45,12 +45,31 @@ $('#add').on("click",function(){
     runAddItems();
 });
 
+$('#completed').on("click", function(){
+   checked();
+   $("#completed").hide();
+})
+
 $('#toDoList').on("click", '#check', function(){
-    $(this).closest(".fullItem").remove();
-    var item = $(this).closest(".fullItem").find("input[id='listItem'").val();
-    console.log(item);
-    removeFromArray(item);
+    var checked = $('input:checked');
+    console.log(checked);
+    if(checked.length === 0){
+        $("#completed").hide();
+    } else{
+        $("#completed").show();
+    } 
 });
+
+function checked(){
+    var checked = $('input:checked')
+    console.log(checked);
+    $.each(checked, function(){
+        $(this).closest(".fullItem").remove();
+        var item = $(this).closest(".fullItem").find("input[id='listItem'").val();
+        removeFromArray(item);
+    });
+
+}
 
 $('#toDoList').on("click", '#delete', function(){
     $(this).closest(".fullItem").remove();
