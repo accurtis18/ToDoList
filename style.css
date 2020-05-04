@@ -12,28 +12,28 @@ body{
 }
 
 #completed{
-    position: absolute;
-    left: 175px;
-    margin: 15px;
     display: none;
+    margin: 0 auto;
+    float: right;
+    margin-top: 15px;
 }
 
-@media (max-width: 1200px){
-        .test2 {
-            display: flex;
-            flex-direction: column-reverse;
-        }
-        #completed{
-            position: relative;
-            left: 0;
-            margin: 10px auto;
-            margin-top: 0;
-        }
+@media (max-width: 990px){
+    #completed{
+        float: none;
+        margin: 0 auto;
+        display: none;
+    }
+    .test2{
+        padding-left: 35px;
+    }
 }
 
 .addItem{
-    max-width: 500px;
+    max-width: 520px;
     margin: 15px auto;
+    float: left;
+    padding-left: 20px;
 }
 
 #add{
@@ -41,9 +41,18 @@ body{
     color: white;
 }
 
+.empty{
+    margin: 0 auto; 
+}
+
 .fullItem{
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 520px;
+    margin: 10px auto;
+    float: left;
+    padding-left: 20px;
+}
+
+.rowItem{
 }
 
 #listItem{

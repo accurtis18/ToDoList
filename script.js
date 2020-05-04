@@ -7,7 +7,9 @@ $(document).ready(function(){
     }
 
 function writeItems(listItem){
-    $('#toDoList').append(`<div class="input-group mb-3 fullItem">
+    $('#toDoList').append(`<div class="row rowItem"><div class="col-md-3 d-none d-lg-block empty">&nbsp;</div>
+    <div class="col-md-9">
+    <div class="input-group mb-3 fullItem">
     <div class="input-group-prepend">
     <div class="input-group-text">
       <input type="checkbox" aria-label="Checkbox for following text input" id="check">
@@ -16,6 +18,8 @@ function writeItems(listItem){
     <input type="text" class="form-control" id="listItem" value="${listItem}" readonly>
     <div class="input-group-append">
         <button class="input-group-text bg-danger text-white" id="delete">Delete</button>
+    </div>
+    </div>
     </div>
     </div>`);
 }
@@ -52,7 +56,6 @@ $('#completed').on("click", function(){
 
 $('#toDoList').on("click", '#check', function(){
     var checked = $('input:checked');
-    console.log(checked);
     if(checked.length === 0){
         $("#completed").hide();
     } else{
